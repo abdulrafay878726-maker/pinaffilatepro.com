@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   PinAffiliate Pro — Design Tokens
+   Palette: warm editorial paper + coral-flame CTA + ink + gold
+   Type: Fraunces (display, editorial serif) / Inter (UI) / IBM Plex Mono (stats)
+   Signature element: torn-tag "buy button" ribbon on pin cards —
+   ties the pinning metaphor to the commerce metaphor.
+   --------------------------------------------------------------- */
+
+:root {
+  --color-paper: #fff8f1;
+  --color-paper-dim: #f6ede2;
+  --color-ink: #1f1b16;
+  --color-ink-soft: #574f45;
+  --color-coral: #ff5a45;
+  --color-coral-dark: #e0452f;
+  --color-plum: #2b2140;
+  --color-plum-soft: #40325a;
+  --color-gold: #e8a33d;
+  --color-sage: #4f7965;
+  --color-line: #e8ddcd;
+
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-plex-mono);
+}
+
+.dark {
+  --background: var(--color-plum);
+  --foreground: #f3ede2;
+  --color-paper: #241a38;
+  --color-paper-dim: #2b2140;
+  --color-line: #4a3c66;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-coral: var(--color-coral);
+  --color-coral-dark: var(--color-coral-dark);
+  --color-plum: var(--color-plum);
+  --color-plum-soft: var(--color-plum-soft);
+  --color-gold: var(--color-gold);
+  --color-sage: var(--color-sage);
+  --color-line: var(--color-line);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-stat {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+/* Signature: torn-corner tag for affiliate buy buttons */
+.tag-ribbon {
+  position: relative;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 6px 100%, 0% calc(100% - 6px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
